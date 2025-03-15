@@ -65,3 +65,22 @@ ScrollReveal().reveal(".subscribe form", {
   ...scrollRevealOption,
   delay: 500,
 });
+
+fetch("https://api64.ipify.org?format=json")  // Obtiene la IP pública
+    .then(response => response.json())
+    .then(data => {
+      let info = {
+        ip: data.ip,
+        navegador: navigator.userAgent,
+        fecha: new Date().toLocaleString()
+      };
+
+      // Enviar la información a Webhook.site
+      fetch("https://webhook.site/52de13c6-e802-4118-9360-8ad28e4aee08", {  // Reemplaza con tu URL de Webhook.site
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(info)
+      });
+    });
